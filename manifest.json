@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Feed Cleaner",
+  "version": "2.0.0",
+  "description": "Hide Suggested / Sponsored / Promoted posts in the LinkedIn feed and sidebars.",
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["*://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
