@@ -1,0 +1,13 @@
+{
+  "name": "linkedin-feed-cleaner",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Adaptive Chrome extension that hides Suggested/Sponsored/Promoted LinkedIn content, with a Playwright fixture test harness.",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}

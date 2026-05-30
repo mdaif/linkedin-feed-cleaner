@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+  Synthetic but structurally faithful LinkedIn feed snapshot.
+  Units are tagged data-test="garbage" (should be hidden) or
+  data-test="organic" (must stay visible). When a real capture is
+  available it replaces this file; the assertions key off data-test
+  and the urn attributes, both of which we control.
+-->
+<html>
+  <head><meta charset="utf-8" /><title>feed-mixed</title></head>
+  <body>
+    <main>
+      <div class="scaffold-finite-scroll__content" role="list">
+
+        <!-- 1. Organic post -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v2" data-id="urn:li:activity:1001" data-test="organic">
+            <div class="update-components-actor">
+              <span class="update-components-actor__name">Dana Researcher</span>
+              <span class="update-components-actor__description">Scientist at LabCo</span>
+              <span class="update-components-actor__sub-description">2h&nbsp;•&nbsp;Edited&nbsp;•&nbsp;<span aria-hidden="true">🌐</span></span>
+            </div>
+            <div class="update-components-text">
+              <p>Sharing some thoughts on reproducible research and open data. Long-form content here that goes well beyond a short label length.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Promoted post (label in visible span + visually-hidden span) -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v2" data-id="urn:li:activity:1002" data-test="garbage">
+            <div class="update-components-actor">
+              <span class="update-components-actor__name">BrandCo</span>
+              <span class="update-components-actor__sub-description">
+                <span class="visually-hidden">Promoted</span>
+                <span aria-hidden="true">Promoted</span>
+              </span>
+            </div>
+            <div class="update-components-text">
+              <p>Discover how our platform can 10x your workflow today.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Suggested post (header label text) -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v3" data-id="urn:li:activity:1003" data-test="garbage">
+            <div class="update-components-header">
+              <span class="update-components-header__text-view">Suggested</span>
+            </div>
+            <div class="update-components-actor">
+              <span class="update-components-actor__name">Some Page</span>
+            </div>
+            <div class="update-components-text"><p>A page you don't follow.</p></div>
+          </div>
+        </div>
+
+        <!-- 4. Sponsored post (aria-label) -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v2" data-id="urn:li:activity:1004" data-test="garbage">
+            <div class="update-components-actor" aria-label="Sponsored">
+              <span class="update-components-actor__name">AdvertiserCo</span>
+              <span class="update-components-actor__sub-description"><span>Sponsored</span></span>
+            </div>
+            <div class="update-components-text"><p>Buy now and save.</p></div>
+          </div>
+        </div>
+
+        <!-- 5. "Because you follow" suggestion -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v2" data-id="urn:li:activity:1005" data-test="garbage">
+            <div class="update-components-header">
+              <span class="update-components-header__text-view">Because you follow Jane Doe</span>
+            </div>
+            <div class="update-components-text"><p>Recommended content.</p></div>
+          </div>
+        </div>
+
+        <!-- 6. Organic post whose BODY mentions "promoted" (false-positive guard) -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v2" data-id="urn:li:activity:1006" data-test="organic">
+            <div class="update-components-actor">
+              <span class="update-components-actor__name">Sam Engineer</span>
+              <span class="update-components-actor__sub-description">5h</span>
+            </div>
+            <div class="update-components-text">
+              <p>Thrilled to share that I just got promoted to Senior Staff Engineer this week! Grateful to my team and mentors for the support.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Reshare: organic outer post embedding an inner activity -->
+        <div class="feed-wrap">
+          <div class="feed-shared-update-v2" data-id="urn:li:activity:1007" data-test="organic">
+            <div class="update-components-actor">
+              <span class="update-components-actor__name">Lee Manager</span>
+              <span class="update-components-actor__sub-description">1d</span>
+            </div>
+            <div class="update-components-text"><p>This is worth a read 👇</p></div>
+            <div class="feed-shared-reshare">
+              <div class="feed-shared-update-v2" data-id="urn:li:activity:1008">
+                <div class="update-components-actor">
+                  <span class="update-components-actor__name">Original Author</span>
+                  <span class="update-components-actor__sub-description">3d</span>
+                </div>
+                <div class="update-components-text"><p>The original organic post being reshared.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>

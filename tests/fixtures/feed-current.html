@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+  Structure-faithful snapshot of LinkedIn's CURRENT (2026) feed, derived
+  from live DOM inspection:
+    - feed is a div[role="list"]
+    - each post is a DIRECT CHILD, wrapped in a display:contents element
+    - class names are hashed/obfuscated and meaningless
+    - NO urn:li:* attributes, NO role="article"
+    - the only reliable garbage signal is the label TEXT in a <span>
+  No real third-party content is committed here — names/text are synthetic.
+-->
+<html>
+  <head><meta charset="utf-8" /><title>feed-current</title></head>
+  <body>
+    <main>
+      <div role="list" class="e29f7219 _4127f3d5 _02a9ecc6">
+
+        <!-- chrome: post composer (not a post; must stay) -->
+        <div class="_382b8834 _7ad77128" data-test="organic">
+          <div>Start a post · Video · Photo · Write article</div>
+        </div>
+
+        <!-- chrome: feed view selector (must stay) -->
+        <div class="_36cac898" data-test="organic">
+          <div>Select feed view: Most relevant first</div>
+        </div>
+
+        <!-- SUGGESTED post -->
+        <div style="display:contents" data-test="garbage">
+          <div class="_103692c6 b3">
+            <span class="visually-hidden">Feed post</span>
+            <div class="_2f9e3fe1">
+              <span class="a1b2c3">Suggested</span>
+            </div>
+            <div class="d4e5f6">
+              <span class="g7h8i9">Dan B.</span>
+              <span class="j0k1l2">Co-Founder @ SomeStartup • 2nd</span>
+            </div>
+            <div class="m3n4o5"><p>Generative imagery for your wardrobe.</p></div>
+          </div>
+        </div>
+
+        <!-- PROMOTED post (label "Promoted • partnership with") -->
+        <div style="display:contents" data-test="garbage">
+          <div class="_103692c6 b3">
+            <span class="visually-hidden">Feed post</span>
+            <div class="d4e5f6">
+              <span class="g7h8i9">Tanja R.</span>
+              <span class="j0k1l2">
+                <span class="p6q7r8">Promoted • partnership with BrandCo</span>
+              </span>
+            </div>
+            <div class="m3n4o5"><p>Transform your enterprise workflows today.</p></div>
+          </div>
+        </div>
+
+        <!-- ORGANIC: a connection "likes this" surfaced post (must stay) -->
+        <div style="display:contents" data-test="organic">
+          <div class="_103692c6 b3">
+            <span class="visually-hidden">Feed post</span>
+            <div class="s9t0u1"><span>Frank Kane likes this</span></div>
+            <div class="d4e5f6">
+              <span class="g7h8i9">Fabio C.</span>
+              <span class="j0k1l2">Ex-CTO • 2nd • 3h</span>
+            </div>
+            <div class="m3n4o5"><p>A thoughtful long-form post about distributed systems and the trade-offs involved in real deployments.</p></div>
+          </div>
+        </div>
+
+        <!-- LinkedIn Learning course promo -->
+        <div style="display:contents" data-test="garbage">
+          <div class="_103692c6 b3">
+            <span class="visually-hidden">Feed post</span>
+            <div class="d4e5f6">
+              <span class="x1y2z3">Popular course on LinkedIn Learning</span>
+            </div>
+            <div class="m3n4o5"><p>Advanced Prompt Engineering — 1h 12m · 84,201 learners</p></div>
+          </div>
+        </div>
+
+        <!-- ORGANIC: body mentions "promoted" (false-positive guard, must stay) -->
+        <div style="display:contents" data-test="organic">
+          <div class="_103692c6 b3">
+            <span class="visually-hidden">Feed post</span>
+            <div class="d4e5f6">
+              <span class="g7h8i9">Sam Engineer</span>
+              <span class="j0k1l2">Staff Engineer • 1st • 5h</span>
+            </div>
+            <div class="m3n4o5"><p>Thrilled to share that I just got promoted to Senior Staff Engineer this week! Grateful to my team.</p></div>
+          </div>
+        </div>
+
+        <!-- ORGANIC: body mentions LinkedIn Learning (false-positive guard, must stay) -->
+        <div style="display:contents" data-test="organic">
+          <div class="_103692c6 b3">
+            <span class="visually-hidden">Feed post</span>
+            <div class="d4e5f6">
+              <span class="g7h8i9">Priya Dev</span>
+              <span class="j0k1l2">Developer • 1st • 2h</span>
+            </div>
+            <div class="m3n4o5"><p>Just finished a great LinkedIn Learning course on Kubernetes — highly recommend it for anyone going deeper on container orchestration.</p></div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>
